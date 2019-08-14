@@ -12,7 +12,7 @@ import android.view.View;
  *
  * @author Linsr 2019/8/14 下午8:03
  */
-public class ChildView extends View {
+public class ChildView extends View implements View.OnTouchListener {
 
     private String TAG = ChildView.class.getSimpleName() + "事件分发";
 
@@ -26,25 +26,33 @@ public class ChildView extends View {
 
     public ChildView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Log.i(TAG, "onTouch(),event:" + event.getAction());
-                return false;
-            }
-        });
+        setOnTouchListener(this);
     }
 
+    /**
+     * 父布局的 onInterceptTouchEvent() -> 子View的dispatchTouchEvent()##
+     */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.i(TAG, "dispatchTouchEvent(),event:" + ev.getAction());
+        Log.d(TAG, "dispatchTouchEvent(),event:" + ev.getAction());
         return super.dispatchTouchEvent(ev);
     }
 
+    /**
+     * 子View的 onTouch() -> 子View的 onTouchEvent()
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.i(TAG, "onTouchEvent(),event:" + event.getAction());
         return super.onTouchEvent(event);
     }
 
+    /**
+     * 子View的 dispatchTouchEvent() -> 子View的 onTouch()
+     */
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        Log.e(TAG, "onTouch(),event:" + event.getAction());
+        return false;
+    }
 }

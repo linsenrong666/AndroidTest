@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
  *
  * @author Linsr 2019/8/14 下午7:57
  */
-public class ParentView extends LinearLayout {
+public class ParentView extends LinearLayout implements View.OnTouchListener {
     private String TAG = ParentView.class.getSimpleName() + "事件分发";
 
     public ParentView(Context context) {
@@ -26,15 +26,12 @@ public class ParentView extends LinearLayout {
 
     public ParentView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Log.d(TAG, "onTouch()");
-                return false;
-            }
-        });
+        setOnTouchListener(this);
     }
 
+    /**
+     * ##Activity的dispatchTouchEvent()调用完了会调用父布局的dispatchTouchEvent()方法##
+     */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         Log.d(TAG, "dispatchTouchEvent(),event:" + ev.getAction());
@@ -43,14 +40,19 @@ public class ParentView extends LinearLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d(TAG, "onTouchEvent(),event:" + event.getAction());
+        Log.i(TAG, "onTouchEvent(),event:" + event.getAction());
         return super.onTouchEvent(event);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.d(TAG, "onInterceptTouchEvent(),event:" + ev.getAction());
+        Log.w(TAG, "onInterceptTouchEvent(),event:" + ev.getAction());
         return super.onInterceptTouchEvent(ev);
     }
 
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        Log.e(TAG, "onTouch()");
+        return false;
+    }
 }

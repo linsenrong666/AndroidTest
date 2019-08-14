@@ -17,6 +17,10 @@ import linsr.com.androidtest.R;
  * 1、Android 事件分发总是遵循 Activity => ViewGroup => View 的传递顺序；
  * 2、onTouch() 执行总优先于 onClick()
  *
+ * 整体的调用流程
+ * Activity dispatch -> Parent dispatch -> Parent intercept
+ *
+ *
  * https://www.jianshu.com/p/38015afcdb58
  *
  * @author Linsr 2019/8/14 下午7:12
@@ -39,7 +43,7 @@ public class DispatchTestActivity extends AppCompatActivity {
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.v(TAG, "dispatchTouchEvent,event:" + ev.getAction());
+        Log.d(TAG, "dispatchTouchEvent,event:" + ev.getAction());
         return super.dispatchTouchEvent(ev);
     }
 
@@ -58,7 +62,7 @@ public class DispatchTestActivity extends AppCompatActivity {
      */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.v(TAG, "onTouchEvent. event:" + event.getAction());
+        Log.i(TAG, "onTouchEvent. event:" + event.getAction());
         return super.onTouchEvent(event);
     }
 
