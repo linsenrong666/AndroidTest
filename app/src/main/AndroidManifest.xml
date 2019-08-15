@@ -26,6 +26,8 @@
         <activity android:name=".old.MainActivity"/>
         <activity android:name=".dispatch.DispatchTestActivity"/>
         <activity android:name=".dispatch.chain.ChainTestActivity"/>
+        <activity android:name=".handler.HandlerTestActivity"/>
+        <activity android:name=".dispatch.conflict.InterceptActivity"/>
 
         <service android:name=".old.SmsService"/>
     </application>

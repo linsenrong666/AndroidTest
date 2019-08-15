@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import linsr.com.androidtest.dispatch.DispatchTestActivity;
+import linsr.com.androidtest.handler.HandlerTestActivity;
 import linsr.com.androidtest.receiver.ReceiverTestActivity;
 
 /**
@@ -34,7 +35,7 @@ public class EntryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_entry);
         mContext = this;
         RecyclerView mRecyclerView = findViewById(R.id.entry_list_view);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         EAdapter mEAdapter = new EAdapter();
         mRecyclerView.setAdapter(mEAdapter);
         initData();
@@ -44,6 +45,7 @@ public class EntryActivity extends AppCompatActivity {
     private void initData() {
         mMenus.add(new Menu("广播测试", ReceiverTestActivity.class));
         mMenus.add(new Menu("事件分发", DispatchTestActivity.class));
+        mMenus.add(new Menu("Handler", HandlerTestActivity.class));
     }
 
 

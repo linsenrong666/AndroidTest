@@ -10,6 +10,7 @@ import android.view.View;
 import linsr.com.androidtest.R;
 import linsr.com.androidtest.Utils;
 import linsr.com.androidtest.dispatch.chain.ChainTestActivity;
+import linsr.com.androidtest.dispatch.conflict.InterceptActivity;
 
 /**
  * 事件分发
@@ -74,5 +75,6 @@ public class DispatchTestActivity extends AppCompatActivity {
     }
 
     public void onChild(View view) {
+        Utils.toActivity(this, InterceptActivity.class);
     }
 }

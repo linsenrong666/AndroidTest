@@ -6,13 +6,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * Description
  *
  * @author Linsr 2019/8/14 下午8:03
  */
-public class ChildView extends View implements View.OnTouchListener {
+public class ChildView extends android.support.v7.widget.AppCompatTextView implements View.OnTouchListener {
 
     private String TAG = ChildView.class.getSimpleName() + "事件分发";
 

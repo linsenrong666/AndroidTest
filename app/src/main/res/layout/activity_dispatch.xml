@@ -8,15 +8,22 @@
 
     <linsr.com.androidtest.dispatch.ParentView
         android:layout_width="match_parent"
+        android:layout_height="500dp"
         android:background="#234567"
-        android:onClick="toChain"
-        android:layout_height="500dp">
+        android:onClick="toChain">
 
         <linsr.com.androidtest.dispatch.ChildView
             android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:background="#567819"
+            android:gravity="center"
             android:onClick="onChild"
-            android:layout_height="200dp"/>
+            android:text="去解决滑动冲突"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="责任链模式"/>
     </linsr.com.androidtest.dispatch.ParentView>
 
 </LinearLayout>
