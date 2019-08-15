@@ -5,8 +5,11 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 
 import linsr.com.androidtest.R;
+import linsr.com.androidtest.Utils;
+import linsr.com.androidtest.dispatch.chain.ChainTestActivity;
 
 /**
  * 事件分发
@@ -18,8 +21,8 @@ import linsr.com.androidtest.R;
  * 2、onTouch() 执行总优先于 onClick()
  *
  * 整体的调用流程
- * Activity dispatch -> Parent dispatch -> Parent intercept
- *
+ * Activity dispatch -> Parent dispatch -> Parent intercept -> Child dispatch -> Child onTouch ->
+ * Child -> onTouchEvent -> Parent onTouch ->Parent onTouchEvent -> Activity onTouchEvent
  *
  * https://www.jianshu.com/p/38015afcdb58
  *
@@ -66,4 +69,10 @@ public class DispatchTestActivity extends AppCompatActivity {
         return super.onTouchEvent(event);
     }
 
+    public void toChain(View view) {
+        Utils.toActivity(this, ChainTestActivity.class);
+    }
+
+    public void onChild(View view) {
+    }
 }

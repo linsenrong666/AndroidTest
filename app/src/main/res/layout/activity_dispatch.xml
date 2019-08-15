@@ -9,12 +9,14 @@
     <linsr.com.androidtest.dispatch.ParentView
         android:layout_width="match_parent"
         android:background="#234567"
+        android:onClick="toChain"
         android:layout_height="500dp">
 
         <linsr.com.androidtest.dispatch.ChildView
             android:layout_width="match_parent"
             android:background="#567819"
-            android:layout_height="250dp"/>
+            android:onClick="onChild"
+            android:layout_height="200dp"/>
     </linsr.com.androidtest.dispatch.ParentView>
 
 </LinearLayout>
