@@ -2,6 +2,7 @@ package linsr.com.androidtest.file;
 
 import android.content.Context;
 import android.os.Environment;
+import android.text.format.DateUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -21,14 +25,16 @@ import linsr.com.androidtest.Utils;
 import linsr.com.androidtest.base.BaseActivity;
 import linsr.com.androidtest.old.ToastUtils;
 
+import static android.text.format.DateUtils.FORMAT_24HOUR;
+
 public class WriteLogActivity extends BaseActivity {
     private String TAG = "file_log";
 
     private String[] log = {"1", "2", "3", "4", "5"};
     private final static Lock lock = new ReentrantLock();
 
-    private final static String LOG_FILE_A = "dd_waiter_log_a";
-    private final static String LOG_FILE_B = "dd_waiter_log_b";
+    private final static String LOG_FILE_A = "dd_waiter_log_a.log";
+    private final static String LOG_FILE_B = "dd_waiter_log_b.log";
 
     private String dirPath;
     private TextView mTextView;
@@ -50,8 +56,9 @@ public class WriteLogActivity extends BaseActivity {
     }
 
     public void onWriteLog(View view) {
-        Utils.i(TAG, "写！");
-        UploadLogManager.getInstance().writeLog(log[Utils.randomInt(log.length)] + "\n");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS", Locale.getDefault());
+        String message = simpleDateFormat.format(new Date());
+        UploadLogManager.getInstance().writeLog(message + "\n");
         mTextView.setText(readA());
         mScrollView.fullScroll(View.FOCUS_DOWN);
     }
