@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
+import java.util.Random;
+import java.util.UUID;
+
 /**
  * Description
  *
@@ -42,4 +45,13 @@ public class Utils {
         return format;
     }
 
+    public static String uuid(){
+        return UUID.randomUUID().toString().replace("-","");
+    }
+
+    private static final Random random = new Random();
+
+    public static int randomInt(int i){
+        return random.nextInt(i);
+    }
 }

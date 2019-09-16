@@ -16,7 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import linsr.com.androidtest.dispatch.DispatchTestActivity;
+import linsr.com.androidtest.file.WriteLogActivity;
 import linsr.com.androidtest.handler.HandlerTestActivity;
+import linsr.com.androidtest.loader.LoaderTestActivity;
 import linsr.com.androidtest.receiver.ReceiverTestActivity;
 
 /**
@@ -46,6 +48,8 @@ public class EntryActivity extends AppCompatActivity {
         mMenus.add(new Menu("广播测试", ReceiverTestActivity.class));
         mMenus.add(new Menu("事件分发", DispatchTestActivity.class));
         mMenus.add(new Menu("Handler", HandlerTestActivity.class));
+        mMenus.add(new Menu("Loader", LoaderTestActivity.class));
+        mMenus.add(new Menu("写日志", WriteLogActivity.class));
     }
 
 

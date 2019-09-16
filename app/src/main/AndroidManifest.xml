@@ -28,8 +28,16 @@
         <activity android:name=".dispatch.chain.ChainTestActivity"/>
         <activity android:name=".handler.HandlerTestActivity"/>
         <activity android:name=".dispatch.conflict.InterceptActivity"/>
+        <activity android:name=".livedata.LiveDataDemoActivity" />
+        <activity android:name=".loader.LoaderTestActivity" />
+        <activity android:name=".file.WriteLogActivity" />
 
         <service android:name=".old.SmsService"/>
+
+        <provider
+            android:name=".loader.CP"
+            android:authorities="linsr.com.aaaa"
+            android:exported="false"/>
     </application>
 
 </manifest>
