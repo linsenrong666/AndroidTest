@@ -15,6 +15,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+import linsr.com.androidtest.applicationTest.ApplicationTestActivity;
 import linsr.com.androidtest.dispatch.DispatchTestActivity;
 import linsr.com.androidtest.file.WriteLogActivity;
 import linsr.com.androidtest.handler.HandlerTestActivity;
@@ -45,6 +46,7 @@ public class EntryActivity extends AppCompatActivity {
     }
 
     private void initData() {
+        mMenus.add(new Menu("Application", ApplicationTestActivity.class));
         mMenus.add(new Menu("广播测试", ReceiverTestActivity.class));
         mMenus.add(new Menu("事件分发", DispatchTestActivity.class));
         mMenus.add(new Menu("Handler", HandlerTestActivity.class));

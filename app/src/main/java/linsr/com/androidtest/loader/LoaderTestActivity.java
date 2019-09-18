@@ -1,5 +1,6 @@
 package linsr.com.androidtest.loader;
 
+import android.app.LoaderManager;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.view.View;
@@ -13,7 +14,7 @@ public class LoaderTestActivity extends BaseActivity {
 
     private ListView mListView;
     private UserAdapter mAdapter;
-
+    private UserLoader mUserLoader;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_loader;
@@ -29,7 +30,15 @@ public class LoaderTestActivity extends BaseActivity {
             cursor.close();
         }
         mListView.setAdapter(mAdapter);
+        mUserLoader = new UserLoader(this);
 
+        getLoaderManager().initLoader(0,null, (LoaderManager.LoaderCallbacks<Cursor>) mUserLoader);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        getLoaderManager().destroyLoader(0);
     }
 
     public void onloaderAddData(View view) {
