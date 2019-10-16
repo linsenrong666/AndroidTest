@@ -4,9 +4,6 @@ import android.app.Application;
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleOwner;
 
-import com.linsr.common.base.BaseApplication;
-import com.linsr.common.net.NetUtils;
-import com.uber.autodispose.AutoDisposeConverter;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -23,13 +20,6 @@ public abstract class PresenterEx<V extends IView> implements IPresenter {
 
     public PresenterEx(V IView) {
         mView = IView;
-    }
-
-    protected <T> AutoDisposeConverter<T> bindLifecycle() {
-        if (null == mLifecycleOwner) {
-            throw new NullPointerException("lifecycleOwner == null");
-        }
-        return NetUtils.bindLifecycle(mLifecycleOwner);
     }
 
     protected LifecycleOwner getLifecycleOwner() {

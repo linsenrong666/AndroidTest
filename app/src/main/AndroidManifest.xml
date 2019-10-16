@@ -31,6 +31,9 @@
         <activity android:name=".livedata.LiveDataDemoActivity" />
         <activity android:name=".loader.LoaderTestActivity" />
         <activity android:name=".file.WriteLogActivity" />
+        <activity android:name=".timeFormat.TimeFormatActivity" />
+        <activity android:name=".dispatch.ScrollConflictInnerActivity" />
+        <activity android:name=".dispatch.ScrollConflictOutActivity" />
 
         <service android:name=".old.SmsService"/>
 

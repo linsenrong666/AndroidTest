@@ -17,10 +17,13 @@ import java.util.List;
 
 import linsr.com.androidtest.applicationTest.ApplicationTestActivity;
 import linsr.com.androidtest.dispatch.DispatchTestActivity;
+import linsr.com.androidtest.dispatch.ScrollConflictInnerActivity;
+import linsr.com.androidtest.dispatch.ScrollConflictOutActivity;
 import linsr.com.androidtest.file.WriteLogActivity;
 import linsr.com.androidtest.handler.HandlerTestActivity;
 import linsr.com.androidtest.loader.LoaderTestActivity;
 import linsr.com.androidtest.receiver.ReceiverTestActivity;
+import linsr.com.androidtest.timeFormat.TimeFormatActivity;
 
 /**
  * Description
@@ -52,6 +55,9 @@ public class EntryActivity extends AppCompatActivity {
         mMenus.add(new Menu("Handler", HandlerTestActivity.class));
         mMenus.add(new Menu("Loader", LoaderTestActivity.class));
         mMenus.add(new Menu("写日志", WriteLogActivity.class));
+        mMenus.add(new Menu("格式化时间", TimeFormatActivity.class));
+        mMenus.add(new Menu("内部拦截", ScrollConflictInnerActivity.class));
+        mMenus.add(new Menu("外部拦截", ScrollConflictOutActivity.class));
     }
 
 
@@ -64,6 +70,12 @@ public class EntryActivity extends AppCompatActivity {
             mClass = aClass;
         }
     }
+
+    class eee {
+        String aaa;
+    }
+
+    eee eee ;
 
     class EAdapter extends RecyclerView.Adapter<EAdapter.Holder> {
 
