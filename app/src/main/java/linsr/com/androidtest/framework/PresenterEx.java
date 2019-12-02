@@ -5,7 +5,6 @@ import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleOwner;
 
 
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Description
@@ -32,38 +31,38 @@ public abstract class PresenterEx<V extends IView> implements IPresenter {
     }
 
     @Override
-    public void onLifecycleChanged(@NotNull LifecycleOwner owner,
-                                   @NotNull Lifecycle.Event event) {
+    public void onLifecycleChanged( LifecycleOwner owner,
+                                    Lifecycle.Event event) {
 
     }
 
     @Override
-    public void onCreate(@NotNull LifecycleOwner owner) {
+    public void onCreate( LifecycleOwner owner) {
 
     }
 
     @Override
-    public void onStart(@NotNull LifecycleOwner owner) {
+    public void onStart( LifecycleOwner owner) {
 
     }
 
     @Override
-    public void onResume(@NotNull LifecycleOwner owner) {
+    public void onResume( LifecycleOwner owner) {
 
     }
 
     @Override
-    public void onPause(@NotNull LifecycleOwner owner) {
+    public void onPause( LifecycleOwner owner) {
 
     }
 
     @Override
-    public void onStop(@NotNull LifecycleOwner owner) {
+    public void onStop( LifecycleOwner owner) {
 
     }
 
     @Override
-    public void onDestroy(@NotNull LifecycleOwner owner) {
+    public void onDestroy( LifecycleOwner owner) {
         mView = null;
     }
 

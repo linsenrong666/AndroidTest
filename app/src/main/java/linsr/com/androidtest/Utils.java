@@ -1,6 +1,7 @@
 package linsr.com.androidtest;
 
 import android.app.Activity;
+import android.arch.lifecycle.LiveData;
 import android.content.Intent;
 import android.util.Log;
 

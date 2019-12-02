@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/sql_create_db"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="创建DB" />
+
+    <Button
+        android:id="@+id/sql_write_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="线程A写" />
+
+    <Button
+        android:id="@+id/sql_write_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="线程B写" />
+
+    <Button
+        android:id="@+id/sql_write_d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="新DB 线程D写" />
+
+    <Button
+        android:id="@+id/sql_write_f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="新DB 线程F写" />
+
+    <Button
+        android:id="@+id/sql_read_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="线程C读" />
+
+
+</LinearLayout>

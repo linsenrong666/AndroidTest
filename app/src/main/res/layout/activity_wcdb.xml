@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/insert_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:hint="插入多少条数据"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/sqlite_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插入sqlite" />
+
+
+    <Button
+        android:id="@+id/wcdb_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插入wcdb" />
+
+    <Button
+        android:id="@+id/sqlite_db_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="传入db，插入sqlite" />
+
+
+    <Button
+        android:id="@+id/wcdb_db_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="传入db，插入wcdb" />
+
+    <EditText
+        android:id="@+id/query_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="查询结果"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/sqlite_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询sqlite" />
+
+    <Button
+        android:id="@+id/wcdb_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询wcdb" />
+</LinearLayout>

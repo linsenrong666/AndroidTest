@@ -23,7 +23,9 @@ import linsr.com.androidtest.file.WriteLogActivity;
 import linsr.com.androidtest.handler.HandlerTestActivity;
 import linsr.com.androidtest.loader.LoaderTestActivity;
 import linsr.com.androidtest.receiver.ReceiverTestActivity;
+import linsr.com.androidtest.sqlite.SqlActivity;
 import linsr.com.androidtest.timeFormat.TimeFormatActivity;
+import linsr.com.androidtest.wcdb.WcdbActivity;
 
 /**
  * Description
@@ -58,6 +60,8 @@ public class EntryActivity extends AppCompatActivity {
         mMenus.add(new Menu("格式化时间", TimeFormatActivity.class));
         mMenus.add(new Menu("内部拦截", ScrollConflictInnerActivity.class));
         mMenus.add(new Menu("外部拦截", ScrollConflictOutActivity.class));
+        mMenus.add(new Menu("SQL读写实验", SqlActivity.class));
+        mMenus.add(new Menu("wcdb", WcdbActivity.class));
     }
 
 
@@ -75,7 +79,7 @@ public class EntryActivity extends AppCompatActivity {
         String aaa;
     }
 
-    eee eee ;
+    eee eee;
 
     class EAdapter extends RecyclerView.Adapter<EAdapter.Holder> {
 

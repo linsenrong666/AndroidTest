@@ -34,6 +34,6 @@ public class LiveDataDemoActivity extends BaseActivity {
 
     }
 
-    public void onLivedataADD(View view) {
+    public void onLiveDataADD(View view) {
     }
 }

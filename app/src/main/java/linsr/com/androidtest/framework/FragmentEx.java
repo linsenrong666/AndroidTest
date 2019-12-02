@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import org.jetbrains.annotations.NotNull;
 
 import linsr.com.androidtest.R;
 
@@ -42,7 +41,7 @@ public abstract class FragmentEx<P extends IPresenter> extends BaseFragment impl
 
     @CallSuper
     @MainThread
-    protected void initLifecycleObserver(@NotNull Lifecycle lifecycle) {
+    protected void initLifecycleObserver( Lifecycle lifecycle) {
         if (mPresenter != null) {
             mPresenter.setLifecycleOwner(this);
             lifecycle.addObserver(mPresenter);

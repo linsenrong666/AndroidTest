@@ -34,6 +34,8 @@
         <activity android:name=".timeFormat.TimeFormatActivity" />
         <activity android:name=".dispatch.ScrollConflictInnerActivity" />
         <activity android:name=".dispatch.ScrollConflictOutActivity" />
+        <activity android:name=".sqlite.SqlActivity" />
+        <activity android:name=".wcdb.WcdbActivity" />
 
         <service android:name=".old.SmsService"/>
 

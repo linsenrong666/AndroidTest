@@ -5,7 +5,6 @@ import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.OnLifecycleEvent;
 
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Description
@@ -17,24 +16,24 @@ public interface IPresenter extends LifecycleObserver {
     void setLifecycleOwner(LifecycleOwner lifecycleOwner);
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    void onCreate(@NotNull LifecycleOwner owner);
+    void onCreate( LifecycleOwner owner);
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    void onStart(@NotNull LifecycleOwner owner);
+    void onStart( LifecycleOwner owner);
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    void onResume(@NotNull LifecycleOwner owner);
+    void onResume( LifecycleOwner owner);
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    void onPause(@NotNull LifecycleOwner owner);
+    void onPause( LifecycleOwner owner);
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    void onStop(@NotNull LifecycleOwner owner);
+    void onStop( LifecycleOwner owner);
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    void onDestroy(@NotNull LifecycleOwner owner);
+    void onDestroy( LifecycleOwner owner);
 
     @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
-    void onLifecycleChanged(@NotNull LifecycleOwner owner,
-                            @NotNull Lifecycle.Event event);
+    void onLifecycleChanged( LifecycleOwner owner,
+                             Lifecycle.Event event);
 }
