@@ -4,6 +4,8 @@ import android.app.Application;
 import android.view.View;
 import android.widget.Button;
 
+import java.lang.ref.ReferenceQueue;
+
 import linsr.com.androidtest.R;
 import linsr.com.androidtest.base.BaseActivity;
 
@@ -20,7 +22,6 @@ public class ApplicationTestActivity extends BaseActivity {
 
     @Override
     protected void init() {
-
     }
 
     public void applicationClick(View view) {

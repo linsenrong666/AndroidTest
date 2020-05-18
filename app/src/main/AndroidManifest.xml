@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="linsr.com.androidtest">
+    package="linsr.com.androidtest">
 
-    <permission android:name="android.permission.READ_SMS"/>
+    <permission android:name="android.permission.READ_SMS" />
 
     <application
-        android:allowBackup="true"
         android:name=".App"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -14,20 +14,20 @@
         android:theme="@style/AppTheme">
         <activity android:name=".EntryActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".old.StatusBarActivity"
-            android:theme="@style/translucent"/>
-        <activity android:name=".receiver.ReceiverTestActivity"/>
-        <activity android:name=".old.MainActivity"/>
-        <activity android:name=".dispatch.DispatchTestActivity"/>
-        <activity android:name=".dispatch.chain.ChainTestActivity"/>
-        <activity android:name=".handler.HandlerTestActivity"/>
-        <activity android:name=".dispatch.conflict.InterceptActivity"/>
+            android:theme="@style/translucent" />
+        <activity android:name=".receiver.ReceiverTestActivity" />
+        <activity android:name=".old.MainActivity" />
+        <activity android:name=".dispatch.DispatchTestActivity" />
+        <activity android:name=".dispatch.chain.ChainTestActivity" />
+        <activity android:name=".handler.HandlerTestActivity" />
+        <activity android:name=".dispatch.conflict.InterceptActivity" />
         <activity android:name=".livedata.LiveDataDemoActivity" />
         <activity android:name=".loader.LoaderTestActivity" />
         <activity android:name=".file.WriteLogActivity" />
@@ -36,13 +36,23 @@
         <activity android:name=".dispatch.ScrollConflictOutActivity" />
         <activity android:name=".sqlite.SqlActivity" />
         <activity android:name=".wcdb.WcdbActivity" />
+        <activity android:name=".process.ProcessActivity" />
+        <activity
+            android:name=".process.ProcessRemoteActivity"
+            android:process=":remote" />
+        <activity
+            android:name=".process.ProcessOtherActivity"
+            android:process="com.linsr.androiddemo" />
 
-        <service android:name=".old.SmsService"/>
+        <service android:name=".old.SmsService" />
+        <service
+            android:name=".process.RemoteService"
+            android:process=":chat" />
 
         <provider
             android:name=".loader.CP"
             android:authorities="linsr.com.aaaa"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>

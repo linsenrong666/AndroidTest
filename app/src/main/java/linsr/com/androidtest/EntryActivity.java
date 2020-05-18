@@ -22,6 +22,7 @@ import linsr.com.androidtest.dispatch.ScrollConflictOutActivity;
 import linsr.com.androidtest.file.WriteLogActivity;
 import linsr.com.androidtest.handler.HandlerTestActivity;
 import linsr.com.androidtest.loader.LoaderTestActivity;
+import linsr.com.androidtest.process.ProcessActivity;
 import linsr.com.androidtest.receiver.ReceiverTestActivity;
 import linsr.com.androidtest.sqlite.SqlActivity;
 import linsr.com.androidtest.timeFormat.TimeFormatActivity;
@@ -62,6 +63,7 @@ public class EntryActivity extends AppCompatActivity {
         mMenus.add(new Menu("外部拦截", ScrollConflictOutActivity.class));
         mMenus.add(new Menu("SQL读写实验", SqlActivity.class));
         mMenus.add(new Menu("wcdb", WcdbActivity.class));
+        mMenus.add(new Menu("多进程", ProcessActivity.class));
     }
 
 

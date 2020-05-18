@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/process_tv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/process_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取当前进程名" />
+
+    <Button
+        android:id="@+id/process_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动服务" />
+
+    <Button
+        android:id="@+id/process_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="count Add" />
+
+    <Button
+        android:id="@+id/process_subtract"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="count Subtract" />
+
+
+    <Button
+        android:id="@+id/process_crash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="crash" />
+
+    <Button
+        android:id="@+id/process_btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启子进程的activity" />
+
+    <Button
+        android:id="@+id/process_btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启另外进程的activity" />
+</LinearLayout>
